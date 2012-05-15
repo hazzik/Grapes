@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <authors>hazzik</authors>
     <owners>hazzik</owners>
     <projectUrl>http://github.com/hazzik/Grapes</projectUrl>
@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Grapes it is an utility library which takes care of mapping TreeEntry into database.
 
-Probably you want to install Brandy.Grapes.NHibernate or Brandy.Grapes.EntityFramework</description>
+Probably you want to install Brandy.Grapes.NHibernate</description>
   </metadata>
   <files>
     <file src="bin\Release\Brandy.Grapes.dll" target="lib\net40\Brandy.Grapes.dll" />
