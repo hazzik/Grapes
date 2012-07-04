@@ -8,11 +8,11 @@ Grapes it is an utility library which takes care of mapping TreeEntry into datab
 ##Installation
 First of all install adapter for your favorite ORM (#NHibernate and #EntityFramework CodeFirst are supported):
 
-    Install-Package Brandy.Grapes.EntityFramework
+    Install-Package Brandy.Grapes.NHibernate
     
 OR
 
-    Install-Package Brandy.Grapes.NHibernate
+    Install-Package Brandy.Grapes.FluentNHibernate
     
 ##Usage
 
@@ -29,34 +29,18 @@ public class MySuperTree : TreeEntry<MySuperTree>
 
 ###Write a mapping with your favarite ORM:
 
-####EntityFramework Code First:
-
-```csharp
-
-using Brandy.Grapes.EntityFramework;
-public class MySuperTreeMap : EntityTypeConfiguration<MySuperTree>
-{
-    public MySuperTreeMap()
-    {
-        HasKey(x => x.Id);
-        Property(x => x.Name);
-        this.MapTree("MySuperTreeHierarchy");
-    }
-}
-
-```
-
 ####FluentNhibernate:
 
 ```csharp
-using Brandy.Grapes.NHibernate;
+using Brandy.Grapes.FluentNHibernate;
 public class MySuperTreeMap : ClassMap<MySuperTree>
 {
     public MySuperTreeMap()
     {
         Id(x => x.Id);
         Map(x => x.Name);
-        this.MapTree("MySuperTreeHierarchy");
+        
+        this.MapTree("MySuperTreeHierarchy"); // all magic goes here
     }
 }
 ```
