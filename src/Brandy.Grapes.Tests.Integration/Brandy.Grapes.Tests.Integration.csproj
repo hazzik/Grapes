@@ -56,13 +56,16 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="FluentNHibernate\NHTreeEntryMappingTests.cs" />
+    <Compile Include="FluentNHibernate\NHUnitOfWork.cs" />
+    <Compile Include="FluentNHibernate\NHUnitOfWorkFactory.cs" />
+    <Compile Include="FluentNHibernate\TestTreeEntryMap.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\IUnitOfWorkFactory.cs" />
     <Compile Include="NHibernate\NHTreeEntryMappingTests.cs" />
-    <Compile Include="NHibernate\NHUnitOfWorkFactory.cs" />
     <Compile Include="NHibernate\NHUnitOfWork.cs" />
+    <Compile Include="NHibernate\NHUnitOfWorkFactory.cs" />
     <Compile Include="Infrastructure\TreeEntryMappingTestsBase.cs" />
-    <Compile Include="NHibernate\TestTreeEntryMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +82,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Brandy.Grapes.FluentNHibernate\Brandy.Grapes.FluentNHibernate.csproj">
+      <Project>{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}</Project>
+      <Name>Brandy.Grapes.FluentNHibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Brandy.Grapes.Tests\Brandy.Grapes.Tests.csproj">
       <Project>{55C5E636-B8E6-4AE5-8F12-34FC90774EB8}</Project>
       <Name>Brandy.Grapes.Tests</Name>

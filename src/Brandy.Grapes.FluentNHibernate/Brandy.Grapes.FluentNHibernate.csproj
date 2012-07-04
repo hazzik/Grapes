@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}</ProjectGuid>
+    <ProjectGuid>{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Brandy.Grapes.NHibernate</RootNamespace>
-    <AssemblyName>Brandy.Grapes.NHibernate</AssemblyName>
+    <RootNamespace>Brandy.Grapes.FluentNHibernate</RootNamespace>
+    <AssemblyName>Brandy.Grapes.FluentNHibernate</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>false</SignAssembly>
@@ -53,6 +53,9 @@
     </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\..\packages\Iesi.Collections.3.3.1.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -71,7 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Brandy.Grapes.NHibernate.nuspec" />
+    <None Include="Brandy.Grapes.FluentNHibernate.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

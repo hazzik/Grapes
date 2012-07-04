@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F27725
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes.FluentNHibernate", "src\Brandy.Grapes.FluentNHibernate\Brandy.Grapes.FluentNHibernate.csproj", "{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DAD48FBB-0E32-4506-B72E-EF55AEBBA794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD48FBB-0E32-4506-B72E-EF55AEBBA794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD48FBB-0E32-4506-B72E-EF55AEBBA794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

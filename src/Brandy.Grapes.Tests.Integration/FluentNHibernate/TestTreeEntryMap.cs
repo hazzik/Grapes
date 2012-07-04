@@ -1,9 +1,8 @@
-namespace Brandy.Trees.Tests.Integration.NHibernate
+namespace Brandy.Trees.Tests.Integration.FluentNHibernate
 {
-    using Brandy.Grapes.NHibernate;
-    using Brandy.Grapes.Tests;
-
-    using FluentNHibernate.Mapping;
+    using Grapes.Tests;
+    using Grapes.FluentNHibernate;
+    using global::FluentNHibernate.Mapping;
 
     public class TestTreeEntryMap : ClassMap<TestTreeEntry>
     {

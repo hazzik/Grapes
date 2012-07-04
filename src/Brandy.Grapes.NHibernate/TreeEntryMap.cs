@@ -1,48 +1,57 @@
-using FluentNHibernate.Mapping;
-
 namespace Brandy.Grapes.NHibernate
 {
+    using global::NHibernate.Mapping.ByCode;
+
     public static class TreeEntryMap
     {
-        public static void MapTree<T>(this ClasslikeMapBase<T> map, string hierarchyTableName)
+        public static void MapTree<T>(this IClassMapper<T> map, string hierarchyTableName)
             where T : TreeEntry<T>
         {
-            map.References(x => x.Parent)
-                .Access.CamelCaseField()
-                .Nullable()
-                .Column("PARENT_ID");
+            map.ManyToOne(x => x.Parent, m =>
+                {
+                    m.Access(Accessor.Field);
+                    m.NotNullable(false);
+                    m.Column("PARENT_ID");
+                });
 
-            map.HasMany(x => x.Children)
-                .Access.CamelCaseField()
-                .Cascade.All()
-                .Inverse()
-                .AsSet()
-                .LazyLoad()
-                .BatchSize(250)
-                .KeyColumn("PARENT_ID");
+            map.Set(x => x.Children, m =>
+                {
+                    m.Access(Accessor.Field);
+                    m.Cascade(Cascade.All);
+                    m.Inverse(true);
+                    m.Lazy(CollectionLazy.Lazy);
+                    m.BatchSize(250);
+                    m.Key(k => k.Column("PARENT_ID"));
+                }, m => m.OneToMany());
 
-            map.HasManyToMany(x => x.Ancestors)
-                .Access.CamelCaseField()
-                .Cascade.None()
-                .AsSet()
-                .LazyLoad()
-                .BatchSize(250)
-                .Table(hierarchyTableName)
-                .ParentKeyColumn("CHILD_ID")
-                .ChildKeyColumn("PARENT_ID")
-                .ForeignKeyConstraintNames(string.Format("FK_{0}_CHILD", hierarchyTableName), null);
+            map.Set(x => x.Ancestors, m =>
+                {
+                    m.Access(Accessor.Field);
+                    m.Cascade(Cascade.None);
+                    m.Lazy(CollectionLazy.Lazy);
+                    m.BatchSize(250);
+                    m.Table(hierarchyTableName);
+                    m.Key(k =>
+                        {
+                            k.Column("CHILD_ID");
+                            k.ForeignKey(string.Format("FK_{0}_CHILD", hierarchyTableName));
+                        });
+                }, m => m.ManyToMany(x => x.Column("PARENT_ID")));
 
-            map.HasManyToMany(x => x.Descendants)
-                .Access.CamelCaseField()
-                .Cascade.All()
-                .Inverse()
-                .AsSet()
-                .LazyLoad()
-                .BatchSize(250)
-                .Table(hierarchyTableName)
-                .ParentKeyColumn("PARENT_ID")
-                .ChildKeyColumn("CHILD_ID")
-                .ForeignKeyConstraintNames(string.Format("FK_{0}_PARENT", hierarchyTableName), null);
+            map.Set(x => x.Descendants, m =>
+                {
+                    m.Access(Accessor.Field);
+                    m.Cascade(Cascade.All);
+                    m.Inverse(true);
+                    m.Lazy(CollectionLazy.Lazy);
+                    m.BatchSize(250);
+                    m.Table(hierarchyTableName);
+                    m.Key(k =>
+                        {
+                            k.Column("PARENT_ID");
+                            k.ForeignKey(string.Format("FK_{0}_PARENT", hierarchyTableName));
+                        });
+                }, m => m.ManyToMany(x => x.Column("CHILD_ID")));
         }
     }
 }
