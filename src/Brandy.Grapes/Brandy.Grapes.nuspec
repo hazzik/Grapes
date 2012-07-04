@@ -8,9 +8,11 @@
     <id>Brandy.Grapes</id>
     <title />
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Grapes it is an utility library which takes care of mapping TreeEntry into database.
+    <description>
+      Grapes it is an utility library which takes care of mapping tree-like data structures into database.
 
-Probably you want to install Brandy.Grapes.NHibernate</description>
+      Probably you want to install Brandy.Grapes.NHibernate or Brandy.Grapes.FluentNHibernate
+    </description>
   </metadata>
   <files>
     <file src="bin\Release\Brandy.Grapes.dll" target="lib\net40\Brandy.Grapes.dll" />

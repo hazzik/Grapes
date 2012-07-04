@@ -12,7 +12,7 @@
     <id>Brandy.Grapes.NHibernate</id>
     <title />
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Grapes it is an utility library which takes care of mapping TreeEntry into database.</description>
+    <description>Grapes it is an utility library which takes care of mapping tree-like data structures into database.</description>
   </metadata>
   <files>
     <file src="bin\Release\Brandy.Grapes.NHibernate.dll" target="lib\net40\Brandy.Grapes.NHibernate.dll" />
