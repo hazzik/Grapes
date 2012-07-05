@@ -3,18 +3,23 @@ namespace Brandy.Grapes
     using System;
     using System.Collections.Generic;
 
-    public abstract class TreeEntry<T> where T : TreeEntry<T>
+    public abstract class TreeEntry<T>
+        where T : TreeEntry<T>
     {
-        private readonly ICollection<T> ancestors;
-        private readonly ICollection<T> children;
-        private readonly ICollection<T> descendants;
-        private T parent;
+        protected bool UpdateHierarchy;
+        readonly ICollection<T> ancestors = new List<T>();
+        readonly ICollection<T> children = new List<T>();
+        readonly ICollection<T> descendants = new List<T>();
+        T parent;
 
         protected TreeEntry()
+            : this(true)
         {
-            children = new List<T>();
-            ancestors = new List<T>();
-            descendants = new List<T>();
+        }
+
+        protected TreeEntry(bool updateHierarchy)
+        {
+            UpdateHierarchy = updateHierarchy;
         }
 
         public virtual T Parent
@@ -22,14 +27,14 @@ namespace Brandy.Grapes
             get { return parent; }
             set
             {
-                if (parent != null)
+                if (UpdateHierarchy && parent != null)
                 {
                     var collection = parent.children;
                     collection.Remove(This);
                     UpdateAncestorDescendantRelation(parent, This, false);
                 }
                 parent = value;
-                if (parent != null)
+                if (UpdateHierarchy && parent != null)
                 {
                     var collection = parent.children;
                     collection.Add(This);
@@ -70,7 +75,7 @@ namespace Brandy.Grapes
             child.Parent = null;
         }
 
-        private static void UpdateAncestorDescendantRelation(T ancestor, T descendant, bool addRelation)
+        static void UpdateAncestorDescendantRelation(T ancestor, T descendant, bool addRelation)
         {
             if (ancestor.parent != null)
                 UpdateAncestorDescendantRelation(ancestor.parent, descendant, addRelation);
