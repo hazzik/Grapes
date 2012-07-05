@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <authors>hazzik</authors>
     <owners>hazzik</owners>
     <projectUrl>http://github.com/hazzik/Grapes</projectUrl>
