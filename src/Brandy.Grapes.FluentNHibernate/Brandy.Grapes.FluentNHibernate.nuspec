@@ -4,7 +4,7 @@
     <version>1.0.4</version>
     <authors>hazzik</authors>
     <owners>hazzik</owners>
-    <projectUrl>http://github.com/hazzik/Grapes</projectUrl>
+    <projectUrl>http://github.com/BrandyFx/Grapes</projectUrl>
     <dependencies>
       <dependency id="FluentNHibernate" version="1.3.0.733" />
       <dependency id="Brandy.Grapes" version="1.0.4" />
@@ -13,6 +13,8 @@
     <title />
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Grapes it is an utility library which takes care of mapping tree-like data structures into database.</description>
+    <copyright>Copyright (c) BrandyFx 2012 - 2013</copyright>
+    <tags>Brandy Grapes NHibernate FluentNHibernate tree persistent-tree trees persistent-trees hierarchy</tags>
   </metadata>
   <files>
     <file src="bin\Release\Brandy.Grapes.FluentNHibernate.dll" target="lib\net40\Brandy.Grapes.FluentNHibernate.dll" />

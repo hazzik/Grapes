@@ -4,7 +4,7 @@
     <version>1.0.4</version>
     <authors>hazzik</authors>
     <owners>hazzik</owners>
-    <projectUrl>http://github.com/hazzik/Grapes</projectUrl>
+    <projectUrl>http://github.com/BrandyFx/Grapes</projectUrl>
     <id>Brandy.Grapes</id>
     <title />
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -13,6 +13,8 @@
 
       Probably you want to install Brandy.Grapes.NHibernate or Brandy.Grapes.FluentNHibernate
     </description>
+    <copyright>Copyright (c) BrandyFx 2012 - 2013</copyright>
+    <tags>Brandy Grapes NHibernate FluentNHibernate tree persistent-tree trees persistent-trees hierarchy</tags>
   </metadata>
   <files>
     <file src="bin\Release\Brandy.Grapes.dll" target="lib\net40\Brandy.Grapes.dll" />

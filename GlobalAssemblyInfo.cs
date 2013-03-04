@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("Brandy")]
 [assembly: AssemblyProduct("Brandy.Grapes")]
-[assembly: AssemblyCopyright("Copyright © \"Brandy\" 2012")]
+[assembly: AssemblyCopyright("Copyright © \"BrandyFx\" 2012 - 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
