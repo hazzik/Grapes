@@ -8,3 +8,4 @@ _ReSharper.*
 *.user
 *.suo
 /packages/*/
+*.ide/

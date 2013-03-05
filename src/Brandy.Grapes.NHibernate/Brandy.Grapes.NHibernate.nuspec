@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <version>1.0.4</version>
+    <version>1.1.0</version>
     <authors>hazzik</authors>
     <owners>hazzik</owners>
     <projectUrl>http://github.com/BrandyFx/Grapes</projectUrl>
     <dependencies>
-      <dependency id="NHibernate" version="3.3.1.4000" />
-      <dependency id="Brandy.Grapes" version="1.0.4" />
+      <dependency id="NHibernate" version="3.3.2.4000" />
+      <dependency id="Brandy.Grapes" version="1.1.0" />
     </dependencies>
     <id>Brandy.Grapes.NHibernate</id>
     <title />

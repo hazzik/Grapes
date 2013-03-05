@@ -4,6 +4,12 @@ namespace Brandy.Grapes.NHibernate
 
     public static class TreeEntryMap
     {
+        public static void MapTree<T>(this IClassMapper<T> map)
+            where T : TreeEntry<T>
+        {
+            MapTree(map, typeof (T).Name + "_HIERARCHY");
+        }
+
         public static void MapTree<T>(this IClassMapper<T> map, string hierarchyTableName)
             where T : TreeEntry<T>
         {

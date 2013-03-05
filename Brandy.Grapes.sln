@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes", "src\Brandy.Grapes\Brandy.Grapes.csproj", "{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes.NHibernate", "src\Brandy.Grapes.NHibernate\Brandy.Grapes.NHibernate.csproj", "{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}"

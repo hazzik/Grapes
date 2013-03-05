@@ -4,6 +4,12 @@ namespace Brandy.Grapes.FluentNHibernate
 {
     public static class TreeEntryMap
     {
+        public static void MapTree<T>(this ClasslikeMapBase<T> map)
+            where T : TreeEntry<T>
+        {
+            MapTree(map, typeof(T) + "_HIERARCHY");
+        }
+
         public static void MapTree<T>(this ClasslikeMapBase<T> map, string hierarchyTableName)
             where T : TreeEntry<T>
         {
