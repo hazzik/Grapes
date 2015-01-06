@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes", "src\Brandy.Grapes\Brandy.Grapes.csproj", "{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes.NHibernate", "src\Brandy.Grapes.NHibernate\Brandy.Grapes.NHibernate.csproj", "{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}"
@@ -9,15 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes.Tests", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes.Tests.Integration", "src\Brandy.Grapes.Tests.Integration\Brandy.Grapes.Tests.Integration.csproj", "{DAD48FBB-0E32-4506-B72E-EF55AEBBA794}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F2772504-AADD-4E6C-A980-438052515BD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes.FluentNHibernate", "src\Brandy.Grapes.FluentNHibernate\Brandy.Grapes.FluentNHibernate.csproj", "{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{57CB626A-480A-4C4B-A377-3DEFD87A4EFC}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brandy.Grapes.FluentNHibernate", "src\Brandy.Grapes.FluentNHibernate\Brandy.Grapes.FluentNHibernate.csproj", "{B3A5325D-ECC6-4097-BEF1-DEFBA768CC88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

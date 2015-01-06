@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <version>1.1.0</version>
+    <version>1.0.4</version>
     <authors>hazzik</authors>
     <owners>hazzik</owners>
     <projectUrl>http://github.com/BrandyFx/Grapes</projectUrl>
@@ -17,7 +17,5 @@
     <tags>Brandy Grapes NHibernate FluentNHibernate tree persistent-tree trees persistent-trees hierarchy</tags>
   </metadata>
   <files>
-    <file src="bin\Release\Brandy.Grapes.dll" target="lib\net40\Brandy.Grapes.dll" />
-    <file src="bin\Release\Brandy.Grapes.pdb" target="lib\net40\Brandy.Grapes.pdb" />
   </files>
 </package>

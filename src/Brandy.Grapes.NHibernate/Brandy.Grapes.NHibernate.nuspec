@@ -6,8 +6,7 @@
     <owners>hazzik</owners>
     <projectUrl>http://github.com/BrandyFx/Grapes</projectUrl>
     <dependencies>
-      <dependency id="NHibernate" version="3.3.2.4000" />
-      <dependency id="Brandy.Grapes" version="1.1.0" />
+      <dependency id="Brandy.Grapes" version="1.0.4" />
     </dependencies>
     <id>Brandy.Grapes.NHibernate</id>
     <title />
@@ -17,7 +16,5 @@
     <tags>Brandy Grapes NHibernate FluentNHibernate tree persistent-tree trees persistent-trees hierarchy</tags>
   </metadata>
   <files>
-    <file src="bin\Release\Brandy.Grapes.NHibernate.dll" target="lib\net40\Brandy.Grapes.NHibernate.dll" />
-    <file src="bin\Release\Brandy.Grapes.NHibernate.pdb" target="lib\net40\Brandy.Grapes.NHibernate.pdb" />
   </files>
 </package>
