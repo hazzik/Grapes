@@ -65,6 +65,65 @@ namespace Brandy.Grapes.Tests
         }
 
         [Fact]
+        public void CanAddGrandGrandChild()
+        {
+            var parent = new TestTreeEntry {Name = "parent"};
+            var child = new TestTreeEntry {Name = "child"};
+            var grandChild = new TestTreeEntry {Name = "grandChild"};
+            var grandGrandChild = new TestTreeEntry {Name = "grandGrandChild"};
+
+            parent.AddChild(child);
+            child.AddChild(grandChild);
+            grandChild.AddChild(grandGrandChild);
+
+            parent.IsParentOf(child);
+            parent.IsAncestorOf(grandChild);
+            parent.IsAncestorOf(grandGrandChild);
+
+            child.IsParentOf(grandChild);
+            child.IsAncestorOf(grandGrandChild);
+
+            grandChild.IsParentOf(grandGrandChild);
+        }
+
+        [Fact]
+        public void CanAddChildWithChildren()
+        {
+            var parent = new TestTreeEntry {Name = "parent"};
+            var child = new TestTreeEntry {Name = "child"};
+            var grandChild = new TestTreeEntry {Name = "grandChild"};
+
+            child.AddChild(grandChild);
+            parent.AddChild(child);
+
+            parent.IsParentOf(child);
+            child.IsParentOf(grandChild);
+            parent.IsAncestorOf(grandChild);
+        }
+
+        [Fact]
+        public void CanAddGrandGrandChildWithChildren()
+        {
+            var parent = new TestTreeEntry { Name = "parent" };
+            var child = new TestTreeEntry { Name = "child" };
+            var grandChild = new TestTreeEntry { Name = "grandChild" };
+            var grandGrandChild = new TestTreeEntry { Name = "grandGrandChild" };
+
+            grandChild.AddChild(grandGrandChild);
+            child.AddChild(grandChild);
+            parent.AddChild(child);
+
+            parent.IsParentOf(child);
+            parent.IsAncestorOf(grandChild);
+            parent.IsAncestorOf(grandGrandChild);
+
+            child.IsParentOf(grandChild);
+            child.IsAncestorOf(grandGrandChild);
+
+            grandChild.IsParentOf(grandGrandChild);
+        }
+
+        [Fact]
         public void CanRemoveChild()
         {
             var parent = new TestTreeEntry {Name = "parent"};

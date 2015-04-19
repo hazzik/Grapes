@@ -41,14 +41,19 @@ namespace Brandy.Trees.Tests.Integration.NHibernate
             return session.Get<T>(id);
         }
 
+        public T Load<T>(int id) where T : class
+        {
+            return session.Load<T>(id);
+        }
+
         public IQueryable<T> Query<T>() where T : class
         {
             return session.Query<T>();
         }
 
-        public void Save<T>(T entity) where T : class
+        public int Save<T>(T entity) where T : class
         {
-            session.Save(entity);
+            return (int) session.Save(entity);
         }
     }
 }

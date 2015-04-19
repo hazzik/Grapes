@@ -207,6 +207,45 @@
             }
         }
 
+        [Fact]
+        public void Issue2()
+        {
+            int child1Id;
+            int rootId;
+            // create root and level 1 child
+            using (var uow = factory.Create())
+            {
+                var root = new TestTreeEntry {Name = "root"};
+                rootId = uow.Save(root);
+                child1Id = uow.Save(new TestTreeEntry
+                {
+                    Name = "1. Child",
+                    Parent = root,
+                });
+                uow.Commit();
+            }
+
+            // create level 2 child
+            using (var uow = factory.Create())
+            {
+                var parent = uow.Load<TestTreeEntry>(child1Id);
+                uow.Save(new TestTreeEntry
+                {
+                    Name = "1.1. Child",
+                    Parent = parent
+                });
+                uow.Commit();
+            }
+
+            // root now should have 2 descendants
+            using (var uow = factory.Create())
+            {
+                var root = uow.Get<TestTreeEntry>(rootId);
+
+                Assert.Equal(2, root.Descendants.Count());
+            }
+        }
+
         public void Dispose()
         {
             try

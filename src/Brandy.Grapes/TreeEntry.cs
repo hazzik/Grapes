@@ -77,12 +77,21 @@ namespace Brandy.Grapes
 
         static void UpdateAncestorDescendantRelation(T ancestor, T descendant, bool addRelation)
         {
-            if (ancestor.parent != null)
-                UpdateAncestorDescendantRelation(ancestor.parent, descendant, addRelation);
-            foreach (var grandDescendant in descendant.children)
-                UpdateAncestorDescendantRelation(ancestor, grandDescendant, addRelation);
-            var ancestorDescendants = ancestor.descendants;
-            var descendantAncestors = descendant.ancestors;
+            foreach (var grandAncestor in ancestor.Ancestors)
+            {
+                SetAncestorDescendantRelation(grandAncestor, descendant, addRelation);
+            }
+            foreach (var grandDescendant in descendant.Descendants)
+            {
+                SetAncestorDescendantRelation(ancestor, grandDescendant, addRelation);
+            }
+            SetAncestorDescendantRelation(ancestor, descendant, addRelation);
+        }
+
+        static void SetAncestorDescendantRelation(T ancestor, T descendant, bool addRelation)
+        {
+            var ancestorDescendants = (ICollection<T>) ancestor.Descendants;
+            var descendantAncestors = (ICollection<T>) descendant.Ancestors;
             if (addRelation)
             {
                 ancestorDescendants.Add(descendant);
